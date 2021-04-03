@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Calendar from "./components/Calendar";
+import Ingredient from "./components/Ingredient";
+import { ingredients } from "./components/Ingredients";
+import Fridge from "./components/Fridge";
+import Pantry from "./components/Pantry";
 
 function App() {
+  const weekdays = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <section className="container">
+        {weekdays.map((weekday) => {
+          return <Calendar title={weekday} />;
+        })}
+      </section>
+      <section>
+        {ingredients.map((ingredient) => {
+          return <Ingredient key={ingredient.id} {...ingredient} />;
+        })}
+      </section>
+      <section>
+        <Fridge />
+      </section>
+      <section>
+        <Pantry />
+      </section>
     </div>
   );
 }
