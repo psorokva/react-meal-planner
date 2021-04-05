@@ -4,6 +4,7 @@ import Ingredient from "./components/Ingredient";
 import { ingredients } from "./components/Ingredients";
 import Fridge from "./components/Fridge";
 import Pantry from "./components/Pantry";
+import ProductLibrary from "./components/ProductLibrary";
 
 function App() {
   const weekdays = [
@@ -17,12 +18,15 @@ function App() {
   ];
   return (
     <div>
-      <section className="container">
+      <section className="calendar-grid">
         {weekdays.map((weekday) => {
           return <Calendar title={weekday} />;
         })}
       </section>
-      <section>
+      <section className="container">
+        <ProductLibrary />
+      </section>
+      <section className="container">
         {ingredients.map((ingredient) => {
           return <Ingredient key={ingredient.id} {...ingredient} />;
         })}
