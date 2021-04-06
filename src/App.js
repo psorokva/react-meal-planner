@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Calendar from "./components/Calendar";
 import Ingredient from "./components/Ingredient";
-import { ingredients } from "./components/Ingredients";
+import { ingredients } from "./data/Ingredients";
 import Fridge from "./components/Fridge";
 import Pantry from "./components/Pantry";
 import ProductLibrary from "./components/ProductLibrary";
@@ -16,6 +16,7 @@ function App() {
     "Saturday",
     "Sunday",
   ];
+
   return (
     <div>
       <section className="calendar-grid">
