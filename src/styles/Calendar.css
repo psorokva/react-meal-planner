@@ -1,0 +1,36 @@
+.drag-container {
+  text-align: center;
+}
+
+.droppable {
+  margin-top: 2rem;
+  float: left;
+  width: 33.33%;
+  min-height: 200px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.drag-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.draggable {
+  font-size: 1rem;
+  width: 100px;
+  height: auto;
+  background-color: rgb(238, 238, 136);
+  margin: 10px auto;
+}
+
+.day-header {
+  display: inline-block;
+  font-size: 1.75rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}

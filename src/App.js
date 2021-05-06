@@ -19,11 +19,14 @@ function App() {
 
   return (
     <div>
-      <section className="calendar-grid">
+      <section className="container">
+        <Calendar />
+      </section>
+      {/* <section className="calendar-grid">
         {weekdays.map((weekday) => {
           return <Calendar title={weekday} />;
         })}
-      </section>
+      </section>*/}
       <section className="container">
         <ProductLibrary />
       </section>
