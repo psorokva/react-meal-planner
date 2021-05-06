@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../styles/Calendar.css";
+import { onDragStart, onDragOver } from "./Utils.js";
 
 export default class Calendar extends Component {
   state = {
@@ -29,14 +30,6 @@ export default class Calendar extends Component {
         type: "mon",
       },
     ],
-  };
-
-  onDragStart = (event, title) => {
-    console.log("dragstart on div: ", title);
-    event.dataTransfer.setData("title", title);
-  };
-  onDragOver = (event) => {
-    event.preventDefault();
   };
 
   onDrop = (event, cat) => {
@@ -70,7 +63,7 @@ export default class Calendar extends Component {
       days[ingredient.type].push(
         <div
           key={ingredient.id}
-          onDragStart={(event) => this.onDragStart(event, ingredient.title)}
+          onDragStart={(event) => onDragStart(event, ingredient.title)}
           draggable
           className="draggable"
         >
@@ -83,7 +76,7 @@ export default class Calendar extends Component {
         <div className="drag-container">
           <div
             className="droppable"
-            onDragOver={(event) => this.onDragOver(event)}
+            onDragOver={(event) => onDragOver(event)}
             onDrop={(event) => this.onDrop(event, "none")}
           >
             <span className="day-header">None</span>
@@ -91,7 +84,7 @@ export default class Calendar extends Component {
           </div>
           <div
             className="droppable"
-            onDragOver={(event) => this.onDragOver(event)}
+            onDragOver={(event) => onDragOver(event)}
             onDrop={(event) => this.onDrop(event, "mon")}
           >
             <span className="day-header">Monday</span>
@@ -99,7 +92,7 @@ export default class Calendar extends Component {
           </div>
           <div
             className="droppable"
-            onDragOver={(event) => this.onDragOver(event)}
+            onDragOver={(event) => onDragOver(event)}
             onDrop={(event) => this.onDrop(event, "tue")}
           >
             <span className="day-header">Tuesday</span>
@@ -107,7 +100,7 @@ export default class Calendar extends Component {
           </div>
           <div
             className="droppable"
-            onDragOver={(event) => this.onDragOver(event)}
+            onDragOver={(event) => onDragOver(event)}
             onDrop={(event) => this.onDrop(event, "wed")}
           >
             <span className="day-header">Wednesday</span>
@@ -115,7 +108,7 @@ export default class Calendar extends Component {
           </div>
           <div
             className="droppable"
-            onDragOver={(event) => this.onDragOver(event)}
+            onDragOver={(event) => onDragOver(event)}
             onDrop={(event) => this.onDrop(event, "thu")}
           >
             <span className="day-header">Thursday</span>
@@ -123,7 +116,7 @@ export default class Calendar extends Component {
           </div>
           <div
             className="droppable"
-            onDragOver={(event) => this.onDragOver(event)}
+            onDragOver={(event) => onDragOver(event)}
             onDrop={(event) => this.onDrop(event, "fri")}
           >
             <span className="day-header">Friday</span>
@@ -131,7 +124,7 @@ export default class Calendar extends Component {
           </div>
           <div
             className="droppable"
-            onDragOver={(event) => this.onDragOver(event)}
+            onDragOver={(event) => onDragOver(event)}
             onDrop={(event) => this.onDrop(event, "sat")}
           >
             <span className="day-header">Saturday</span>
@@ -139,7 +132,7 @@ export default class Calendar extends Component {
           </div>
           <div
             className="droppable"
-            onDragOver={(event) => this.onDragOver(event)}
+            onDragOver={(event) => onDragOver(event)}
             onDrop={(event) => this.onDrop(event, "sun")}
           >
             <span className="day-header">Sunday</span>
